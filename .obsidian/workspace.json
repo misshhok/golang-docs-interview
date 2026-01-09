@@ -6,6 +6,7 @@
       {
         "id": "e5b96c50abcc2d0c",
         "type": "tabs",
+        "dimension": 41.199999999999996,
         "children": [
           {
             "id": "1924e3bc5cd64af1",
@@ -13,13 +14,59 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Heap (куча).md",
+                "file": "Go - Каналы (channels).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Heap (куча)"
-            }
+              "title": "Go - Каналы (channels)"
+            },
+            "group": "802963e35f93b13c"
+          }
+        ]
+      },
+      {
+        "id": "36d43d75caf7bc21",
+        "type": "tabs",
+        "dimension": 58.8,
+        "children": [
+          {
+            "id": "9142a6397292324f",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "Go - Каналы (channels).md",
+                "options": {
+                  "collapse-filter": false,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.7823049888827859,
+                  "close": true
+                }
+              },
+              "icon": "lucide-git-fork",
+              "title": "Graph of Go - Каналы (channels)"
+            },
+            "group": "802963e35f93b13c"
           }
         ]
       }
@@ -53,7 +100,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "запись в закрытый канал",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,11 +121,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 437.5
+    "width": 224.5
   },
   "right": {
     "id": "618c1658d67e915f",
@@ -94,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Heap (куча).md",
+                "file": "Go - Каналы (channels).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +152,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Heap (куча)"
+              "title": "Backlinks for Go - Каналы (channels)"
             }
           },
           {
@@ -113,12 +161,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Heap (куча).md",
+                "file": "Go - Каналы (channels).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Heap (куча)"
+              "title": "Outgoing links from Go - Каналы (channels)"
             }
           },
           {
@@ -193,33 +241,33 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7e2669e2ca46c016",
+  "active": "1924e3bc5cd64af1",
   "lastOpenFiles": [
-    "Grafana.md",
-    "sqlx.md",
-    "Go - Unit тестирование.md",
-    "Задача - Worker Pool.md",
-    "Session-based аутентификация.md",
-    "Задача - Two Sum.md",
-    "Trie.md",
-    "Taskfile.md",
-    "Задача - Find Duplicates.md",
-    "GORM - ORM для Go.md",
-    "Prometheus.md",
-    "Makefile.md",
-    "Задача - Group Anagrams.md",
-    "Go - Deadlock.md",
-    "Basic Authentication.md",
-    "Echo.md",
-    "Переменные среды и .env.md",
-    "Задача - Merge Intervals.md",
-    "Метрики и наблюдаемость.md",
-    "JWT (JSON Web Tokens).md",
-    "Gorilla Mux.md",
-    "Go - Race Condition и Data Race.md",
-    "Bash - Основы скриптинга.md",
-    "Задача - Valid Parentheses.md",
-    "GitHub Actions.md",
-    "Gin - Web фреймворк.md"
+    "Go - WaitGroup и Once.md",
+    "Задача - Graceful Shutdown.md",
+    "Go - Context.md",
+    "Go - Пакет sync.md",
+    "Go - Каналы (channels).md",
+    "INDEX.md",
+    "Git - Cherry-pick и работа с историей.md",
+    "Clean Architecture.md",
+    "Git - Rebase vs Merge.md",
+    "SOLID принципы.md",
+    "Git - Gitflow и trunk-based development.md",
+    "Git - Ветвление и слияние.md",
+    "FSM (Конечные автоматы).md",
+    "Задача - Timeout pattern.md",
+    "Задача - Semaphore pattern.md",
+    "Git - Основные команды.md",
+    "Repository паттерн.md",
+    "Задача - Container With Most Water.md",
+    "Test Coverage.md",
+    "Singleton, Factory, Builder в Go.md",
+    "Задача - Palindrome Check.md",
+    "E2E тестирование.md",
+    "Задача - Fan-in Fan-out.md",
+    "Безопасность API.md",
+    "Задача - Implement Queue using Stacks.md",
+    "Паттерны проектирования в Go.md"
   ]
 }
