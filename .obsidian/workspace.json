@@ -195,6 +195,13 @@
   },
   "active": "7e2669e2ca46c016",
   "lastOpenFiles": [
+    "Apache Kafka.md",
+    "RabbitMQ.md",
+    "GraphQL.md",
+    "Protocol Buffers (protobuf).md",
+    "gRPC.md",
+    "HTTP протокол.md",
+    "REST API - Дизайн и best practices.md",
     "Монолит vs Микросервисы.md",
     "Микросервисная архитектура.md",
     "CAP теорема.md",
@@ -213,13 +220,6 @@
     "Service Mesh.md",
     "Связные списки.md",
     "Go - Пакет net-http.md",
-    "BFS и DFS.md",
-    "PostgreSQL - ACID.md",
-    "Графы - Представление.md",
-    "Бинарный поиск.md",
-    "Амортизированная сложность.md",
-    "Два указателя (Two Pointers).md",
-    "Задача - Rate Limiter.md",
-    "Задача - LRU Cache.md"
+    "BFS и DFS.md"
   ]
 }
