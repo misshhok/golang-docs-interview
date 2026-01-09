@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Go - Пакет sync.md",
+                "file": "Heap (куча).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Go - Пакет sync"
+              "title": "Heap (куча)"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 437.5
   },
   "right": {
     "id": "618c1658d67e915f",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Go - Пакет sync.md",
+                "file": "Heap (куча).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Go - Пакет sync"
+              "title": "Backlinks for Heap (куча)"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Go - Пакет sync.md",
+                "file": "Heap (куча).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Go - Пакет sync"
+              "title": "Outgoing links from Heap (куча)"
             }
           },
           {
@@ -195,31 +195,31 @@
   },
   "active": "7e2669e2ca46c016",
   "lastOpenFiles": [
-    "Apache Kafka.md",
-    "RabbitMQ.md",
-    "GraphQL.md",
-    "Protocol Buffers (protobuf).md",
-    "gRPC.md",
-    "HTTP протокол.md",
-    "REST API - Дизайн и best practices.md",
-    "Монолит vs Микросервисы.md",
-    "Микросервисная архитектура.md",
-    "CAP теорема.md",
-    "MongoDB - Основы.md",
-    "Типы СУБД - SQL vs NoSQL.md",
-    "Redis - Кэширование стратегии.md",
-    "Redis - Типы данных и команды.md",
-    "Redis - Key-Value хранилище.md",
-    "PostgreSQL - Оптимизация запросов.md",
-    "SQL - Оконные функции.md",
-    "Message Queue паттерны.md",
-    "SQL - Агрегация и группировка.md",
-    "INDEX.md",
-    "SQL - JOIN операции.md",
-    "PostgreSQL - Блокировки и изоляция транзакций.md",
-    "Service Mesh.md",
-    "Связные списки.md",
-    "Go - Пакет net-http.md",
-    "BFS и DFS.md"
+    "Grafana.md",
+    "sqlx.md",
+    "Go - Unit тестирование.md",
+    "Задача - Worker Pool.md",
+    "Session-based аутентификация.md",
+    "Задача - Two Sum.md",
+    "Trie.md",
+    "Taskfile.md",
+    "Задача - Find Duplicates.md",
+    "GORM - ORM для Go.md",
+    "Prometheus.md",
+    "Makefile.md",
+    "Задача - Group Anagrams.md",
+    "Go - Deadlock.md",
+    "Basic Authentication.md",
+    "Echo.md",
+    "Переменные среды и .env.md",
+    "Задача - Merge Intervals.md",
+    "Метрики и наблюдаемость.md",
+    "JWT (JSON Web Tokens).md",
+    "Gorilla Mux.md",
+    "Go - Race Condition и Data Race.md",
+    "Bash - Основы скриптинга.md",
+    "Задача - Valid Parentheses.md",
+    "GitHub Actions.md",
+    "Gin - Web фреймворк.md"
   ]
 }
