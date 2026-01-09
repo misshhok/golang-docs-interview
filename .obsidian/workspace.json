@@ -11,10 +11,14 @@
             "id": "1924e3bc5cd64af1",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Go - Пакет sync.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Go - Пакет sync"
             }
           }
         ]
@@ -74,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "618c1658d67e915f",
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Go - Пакет sync.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Go - Пакет sync"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Go - Пакет sync.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Go - Пакет sync"
             }
           },
           {
@@ -173,7 +179,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -189,6 +195,17 @@
   },
   "active": "1924e3bc5cd64af1",
   "lastOpenFiles": [
+    "Redis - Key-Value хранилище.md",
+    "PostgreSQL - Оптимизация запросов.md",
+    "SQL - Оконные функции.md",
+    "Message Queue паттерны.md",
+    "SQL - Агрегация и группировка.md",
+    "INDEX.md",
+    "SQL - JOIN операции.md",
+    "PostgreSQL - Блокировки и изоляция транзакций.md",
+    "Service Mesh.md",
+    "Связные списки.md",
+    "Go - Пакет net-http.md",
     "BFS и DFS.md",
     "PostgreSQL - ACID.md",
     "Графы - Представление.md",
@@ -203,17 +220,6 @@
     "Go - Указатели и ссылки.md",
     "PostgreSQL - Типы индексов.md",
     "Go - Указатели - Подводные камни.md",
-    "Алгоритмы на строках.md",
-    "Жадные алгоритмы.md",
-    "Динамическое программирование - Основы.md",
-    "Скользящее окно (Sliding Window).md",
-    "Сортировки - Быстрая, слиянием, пузырьком.md",
-    "Trie.md",
-    "AVL и Red-Black деревья.md",
-    "Heap (куча).md",
-    "Бинарные деревья поиска.md",
-    "Деревья - Основы.md",
-    "HashSet.md",
-    "HashMap - Реализация и особенности.md"
+    "Алгоритмы на строках.md"
   ]
 }
