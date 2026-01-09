@@ -11,14 +11,10 @@
             "id": "1924e3bc5cd64af1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Go - Указатели и ссылки.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Go - Указатели и ссылки"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -53,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "строки",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +70,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Go - Указатели и ссылки.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Go - Указатели и ссылки"
+              "title": "Backlinks"
             }
           },
           {
@@ -114,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Go - Указатели и ссылки.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Go - Указатели и ссылки"
+              "title": "Outgoing links"
             }
           },
           {
@@ -196,31 +189,31 @@
   },
   "active": "1924e3bc5cd64af1",
   "lastOpenFiles": [
+    "BFS и DFS.md",
+    "PostgreSQL - ACID.md",
+    "Графы - Представление.md",
+    "Бинарный поиск.md",
+    "Амортизированная сложность.md",
+    "Два указателя (Two Pointers).md",
     "Задача - Rate Limiter.md",
     "Задача - LRU Cache.md",
+    "Задача - Поиск подстроки.md",
+    "Задача - Пересечение массивов.md",
+    "Задача - Переворот связного списка.md",
+    "Go - Указатели и ссылки.md",
+    "PostgreSQL - Типы индексов.md",
     "Go - Указатели - Подводные камни.md",
     "Алгоритмы на строках.md",
     "Жадные алгоритмы.md",
     "Динамическое программирование - Основы.md",
     "Скользящее окно (Sliding Window).md",
-    "Два указателя (Two Pointers).md",
-    "BFS и DFS.md",
-    "Бинарный поиск.md",
     "Сортировки - Быстрая, слиянием, пузырьком.md",
-    "Графы - Представление.md",
     "Trie.md",
     "AVL и Red-Black деревья.md",
     "Heap (куча).md",
     "Бинарные деревья поиска.md",
     "Деревья - Основы.md",
     "HashSet.md",
-    "HashMap - Реализация и особенности.md",
-    "Стек и очередь.md",
-    "Связные списки.md",
-    "Амортизированная сложность.md",
-    "Временная и пространственная сложность.md",
-    "Go - Профилирование (pprof).md",
-    "Go - Генерация кода (go generate).md",
-    "Go - Рефлексия.md"
+    "HashMap - Реализация и особенности.md"
   ]
 }
