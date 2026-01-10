@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5469afaceb582881",
+        "id": "ec01e7c00de418c6",
         "type": "tabs",
         "children": [
           {
-            "id": "7610fc45440de1f0",
+            "id": "554e4c02e7429441",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -74,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 511.5,
+    "collapsed": true
   },
   "right": {
     "id": "618c1658d67e915f",
@@ -90,6 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Chi.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +101,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Chi"
             }
           },
           {
@@ -108,11 +110,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Chi.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Chi"
             }
           },
           {
@@ -187,8 +190,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bb56be8acca7026f",
+  "active": "554e4c02e7429441",
   "lastOpenFiles": [
+    "Roadmap - Junior Go Developer.md",
+    "Chi.md",
+    "INDEX.md",
+    "Go - Массивы и слайсы.md",
+    "Go - Переменные и константы.md",
+    "Go - Основы синтаксиса.md",
+    "JWT (JSON Web Tokens).md",
+    "Задача - Timeout pattern.md",
+    "Go - Пакет net-http.md",
+    "E2E тестирование.md",
+    "Go - Горутины (goroutines).md",
+    "Go - Каналы (channels).md",
+    "Задача - Merge N Channels.md",
     "Задача - Concurrent Map.md",
     "Задача - Retry with Backoff.md",
     "Задача - Bounded Parallelism.md",
@@ -199,21 +215,8 @@
     "Задача - TTL Cache.md",
     "Задача - Custom WaitGroup.md",
     "Задача - Parallel URL Fetcher.md",
-    "Задача - Merge N Channels.md",
     "Многопоточность vs Параллелизм vs Конкурентность.md",
     "System Design - Основы.md",
-    "Go - Внутреннее устройство map.md",
-    "Go - Внутреннее устройство slice.md",
-    "Go - Escape Analysis.md",
-    "Go - Generics (Дженерики).md",
-    "Go - Планировщик горутин (Scheduler).md",
-    "Go - Пакет sync.md",
-    "Go - Каналы (channels).md",
-    "Задача - Pipeline pattern.md",
-    "Go - WaitGroup и Once.md",
-    "Задача - Graceful Shutdown.md",
-    "Go - Context.md",
-    "INDEX.md",
-    "Git - Cherry-pick и работа с историей.md"
+    "Go - Внутреннее устройство map.md"
   ]
 }
