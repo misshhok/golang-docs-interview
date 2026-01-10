@@ -441,4 +441,4 @@ func (s *OrderService) TrackView(userID, productID int) {
 - [[MongoDB - Основы]]
 - [[Redis - Key-Value хранилище]]
 - [[Микросервисная архитектура]]
-- [[Cassandra - Распределенное хранилище]] (если будет создана)
+- [[System Design - Основы]]

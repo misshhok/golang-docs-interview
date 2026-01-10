@@ -461,5 +461,6 @@ data, err := fetchData()  // err создаётся здесь
 
 - [[Go - Переменные и константы]]
 - [[Go - Указатели - Подводные камни]]
-- [[Go - Область видимости (scope)]]
+- [[Go - Функции и методы]]
 - [[Go - Defer, Panic, Recover]]
+- [[Go - Race Condition и Data Race]]
