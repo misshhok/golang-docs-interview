@@ -11,10 +11,14 @@
             "id": "554e4c02e7429441",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "Go - Генерация кода (go generate).md",
+                "bFile": "Go - Генерация кода (go generate).md",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: Go - Генерация кода (go generate)  (Working Tree)"
             }
           }
         ]
@@ -74,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 511.5,
-    "collapsed": true
+    "width": 244.5
   },
   "right": {
     "id": "618c1658d67e915f",
@@ -193,6 +196,9 @@
   "active": "554e4c02e7429441",
   "lastOpenFiles": [
     "Roadmap - Junior Go Developer.md",
+    "examples/openapi.yaml.md",
+    "examples/openapi.yaml",
+    "examples",
     "Chi.md",
     "INDEX.md",
     "Go - Массивы и слайсы.md",
@@ -216,7 +222,6 @@
     "Задача - Custom WaitGroup.md",
     "Задача - Parallel URL Fetcher.md",
     "Многопоточность vs Параллелизм vs Конкурентность.md",
-    "System Design - Основы.md",
-    "Go - Внутреннее устройство map.md"
+    "System Design - Основы.md"
   ]
 }

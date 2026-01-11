@@ -210,6 +210,387 @@ go install github.com/mailru/easyjson/...@latest
 //go:generate sqlc generate
 ```
 
+### 6. oapi-codegen (OpenAPI -> Go)
+
+```bash
+go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
+
+//go:generate oapi-codegen -config oapi-config.yaml api/openapi.yaml
+```
+
+---
+
+## OpenAPI - генерация сервера и клиента
+
+Один из самых полезных кейсов `go:generate` — генерация Go-кода из OpenAPI (Swagger) спецификации. Это позволяет:
+
+- Писать API-first: сначала спецификация, потом код
+- Автоматически генерировать типы, хендлеры и клиенты
+- Держать документацию и код в синхронизации
+
+### Инструменты для OpenAPI
+
+| Инструмент | Описание |
+|------------|----------|
+| **oapi-codegen** | Самый популярный, поддерживает Chi, Gin, Echo, Fiber |
+| **go-swagger** | Swagger 2.0, генерирует много кода |
+| **ogen** | Новый, быстрый, строгая типизация |
+
+### Пример OpenAPI спецификации
+
+См. пример файла: [[examples/openapi.yaml.md|openapi.yaml]] (полная спецификация с аутентификацией, пагинацией, валидацией)
+
+```yaml
+openapi: "3.0.3"
+info:
+  title: User API
+  version: "1.0.0"
+paths:
+  /users:
+    get:
+      operationId: listUsers
+      responses:
+        "200":
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+    post:
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateUserRequest"
+      responses:
+        "201":
+          description: Created user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+  /users/{id}:
+    get:
+      operationId: getUser
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: User found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: User not found
+components:
+  schemas:
+    User:
+      type: object
+      required: [id, email, name]
+      properties:
+        id:
+          type: integer
+          format: int64
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+    CreateUserRequest:
+      type: object
+      required: [email, name]
+      properties:
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+```
+
+### oapi-codegen - настройка
+
+#### Конфигурационный файл
+
+```yaml
+# oapi-config.yaml
+package: api
+output: internal/api/api.gen.go
+generate:
+  models: true           # Генерировать структуры
+  chi-server: true       # Генерировать Chi сервер
+  strict-server: true    # Строгие хендлеры (рекомендуется)
+  embedded-spec: true    # Встроить спецификацию
+```
+
+#### Директива go:generate
+
+```go
+// internal/api/generate.go
+package api
+
+//go:generate oapi-codegen -config ../../oapi-config.yaml ../../api/openapi.yaml
+```
+
+### Сгенерированный код
+
+После `go generate` получаем:
+
+```go
+// internal/api/api.gen.go (сгенерированный)
+
+// Типы из схемы
+type User struct {
+    Id    int64  `json:"id"`
+    Email string `json:"email"`
+    Name  string `json:"name"`
+}
+
+type CreateUserRequest struct {
+    Email string `json:"email"`
+    Name  string `json:"name"`
+}
+
+// Интерфейс сервера (strict-server)
+type StrictServerInterface interface {
+    // GET /users
+    ListUsers(ctx context.Context, request ListUsersRequestObject) (ListUsersResponseObject, error)
+    // POST /users
+    CreateUser(ctx context.Context, request CreateUserRequestObject) (CreateUserResponseObject, error)
+    // GET /users/{id}
+    GetUser(ctx context.Context, request GetUserRequestObject) (GetUserResponseObject, error)
+}
+
+// Response типы
+type ListUsers200JSONResponse []User
+type CreateUser201JSONResponse User
+type GetUser200JSONResponse User
+type GetUser404Response struct{}
+```
+
+### Реализация сервера
+
+```go
+// internal/api/server.go
+package api
+
+import (
+    "context"
+)
+
+// Реализуем сгенерированный интерфейс
+type Server struct {
+    userRepo UserRepository
+}
+
+func NewServer(userRepo UserRepository) *Server {
+    return &Server{userRepo: userRepo}
+}
+
+// ListUsers implements StrictServerInterface
+func (s *Server) ListUsers(ctx context.Context, req ListUsersRequestObject) (ListUsersResponseObject, error) {
+    users, err := s.userRepo.GetAll(ctx)
+    if err != nil {
+        return nil, err
+    }
+    return ListUsers200JSONResponse(users), nil
+}
+
+// CreateUser implements StrictServerInterface
+func (s *Server) CreateUser(ctx context.Context, req CreateUserRequestObject) (CreateUserResponseObject, error) {
+    user, err := s.userRepo.Create(ctx, req.Body.Email, req.Body.Name)
+    if err != nil {
+        return nil, err
+    }
+    return CreateUser201JSONResponse(*user), nil
+}
+
+// GetUser implements StrictServerInterface
+func (s *Server) GetUser(ctx context.Context, req GetUserRequestObject) (GetUserResponseObject, error) {
+    user, err := s.userRepo.GetByID(ctx, req.Id)
+    if err != nil {
+        return GetUser404Response{}, nil
+    }
+    return GetUser200JSONResponse(*user), nil
+}
+```
+
+### Подключение к роутеру
+
+```go
+// cmd/server/main.go
+package main
+
+import (
+    "log"
+    "net/http"
+
+    "github.com/go-chi/chi/v5"
+    "myapp/internal/api"
+)
+
+func main() {
+    // Создаём сервер с зависимостями
+    server := api.NewServer(userRepo)
+
+    // Оборачиваем в strict handler
+    strictHandler := api.NewStrictHandler(server, nil)
+
+    // Создаём Chi роутер
+    r := chi.NewRouter()
+
+    // Регистрируем сгенерированные маршруты
+    api.HandlerFromMux(strictHandler, r)
+
+    log.Println("Server starting on :8080")
+    http.ListenAndServe(":8080", r)
+}
+```
+
+### Генерация клиента
+
+```yaml
+# oapi-client-config.yaml
+package: client
+output: internal/client/client.gen.go
+generate:
+  models: true
+  client: true    # Генерировать HTTP клиент
+```
+
+```go
+//go:generate oapi-codegen -config ../../oapi-client-config.yaml ../../api/openapi.yaml
+```
+
+#### Использование клиента
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "myapp/internal/client"
+)
+
+func main() {
+    // Создаём клиент
+    c, err := client.NewClient("http://localhost:8080")
+    if err != nil {
+        panic(err)
+    }
+
+    // Получаем список пользователей
+    resp, err := c.ListUsers(context.Background())
+    if err != nil {
+        panic(err)
+    }
+
+    users, err := client.ParseListUsersResponse(resp)
+    if err != nil {
+        panic(err)
+    }
+
+    for _, user := range *users.JSON200 {
+        fmt.Printf("User: %s (%s)\n", user.Name, user.Email)
+    }
+}
+```
+
+### Структура проекта с OpenAPI
+
+```
+myproject/
+├── api/
+│   └── openapi.yaml          # Спецификация API
+├── oapi-config.yaml          # Конфиг для сервера
+├── oapi-client-config.yaml   # Конфиг для клиента
+├── internal/
+│   ├── api/
+│   │   ├── generate.go       # //go:generate директива
+│   │   ├── api.gen.go        # Сгенерированный код
+│   │   └── server.go         # Реализация интерфейса
+│   └── client/
+│       ├── generate.go
+│       └── client.gen.go     # Сгенерированный клиент
+├── cmd/
+│   └── server/
+│       └── main.go
+└── Makefile
+```
+
+### Makefile для генерации
+
+```makefile
+.PHONY: generate
+generate:
+	go generate ./...
+
+.PHONY: validate-openapi
+validate-openapi:
+	npx @redocly/cli lint api/openapi.yaml
+
+.PHONY: docs
+docs:
+	npx @redocly/cli build-docs api/openapi.yaml -o docs/index.html
+```
+
+### Альтернатива: ogen
+
+Более новый генератор с лучшей типизацией:
+
+```bash
+go install github.com/ogen-go/ogen/cmd/ogen@latest
+```
+
+```go
+//go:generate ogen -target internal/api -package api api/openapi.yaml
+```
+
+**Преимущества ogen:**
+- Строгая типизация (нет `interface{}`)
+- Быстрее в runtime
+- Лучше обрабатывает сложные схемы
+- Поддержка oneOf, anyOf, allOf
+
+### Типичные ошибки
+
+```go
+// ❌ Неправильно: редактировать сгенерированный файл
+// api.gen.go - не трогать!
+
+// ✅ Правильно: расширять через отдельные файлы
+// server.go - тут ваш код
+```
+
+```yaml
+# ❌ Неправильно: не указывать required поля
+User:
+  properties:
+    id:
+      type: integer
+
+# ✅ Правильно: явно указывать required
+User:
+  required: [id, email]
+  properties:
+    id:
+      type: integer
+    email:
+      type: string
+```
+
+---
+
 ## text/template для генерации
 
 ```go
