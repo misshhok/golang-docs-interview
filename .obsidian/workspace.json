@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Задача - Pipeline pattern.md",
+                "file": "Типы СУБД - SQL vs NoSQL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Задача - Pipeline pattern"
+              "title": "Типы СУБД - SQL vs NoSQL"
             }
           }
         ]
@@ -195,13 +195,13 @@
   },
   "active": "17d244a3acdf3e7a",
   "lastOpenFiles": [
-    "Задача - First Response.md",
+    "Скользящее окно (Sliding Window).md",
     "Задача - Pipeline pattern.md",
+    "Задача - First Response.md",
     "Задача - Rate Limiter.md",
     "Задача - Parallel URL Fetcher.md",
     "CAP теорема.md",
     "Chi.md",
-    "Скользящее окно (Sliding Window).md",
     "Связные списки.md",
     "Переменные среды и .env.md",
     "Логирование - Best practices.md",
