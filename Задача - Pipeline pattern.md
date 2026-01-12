@@ -499,8 +499,7 @@ func generator() <-chan int {
 }
 ```
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 **Deadlock!**
 
@@ -531,14 +530,13 @@ func generator() <-chan int {
 out := make(chan int, 10)
 ```
 
-</details>
+---
 
 ## Вопрос 2: Почему важно закрывать каналы?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
-**Без закрытия канала:**
+Без закрытия канала:
 ```go
 func stage(in <-chan int) <-chan int {
     out := make(chan int)
@@ -562,12 +560,11 @@ func stage(in <-chan int) <-chan int {
 
 **Правило:** Кто создаёт канал, тот его закрывает (обычно через `defer`)
 
-</details>
+---
 
 ## Вопрос 3: Как обработать ошибки в pipeline?
 
-<details>
-<summary>Решение</summary>
+**Решение:**
 
 **Вариант 1: Структура с ошибкой**
 ```go
@@ -646,7 +643,7 @@ for value := range pipeline.out {
 }
 ```
 
-</details>
+---
 
 ## Best Practices
 

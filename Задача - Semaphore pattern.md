@@ -394,8 +394,7 @@ func main() {
 
 ## Вопрос 1: В чём разница между Semaphore и Worker Pool?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 | Semaphore | Worker Pool |
 |-----------|-------------|
@@ -436,14 +435,13 @@ for _, url := range urls {
 - Semaphore → простое ограничение параллелизма
 - Worker Pool → управление очередью, сложная логика
 
-</details>
+---
 
 ## Вопрос 2: Реализуйте динамический Semaphore
 
 Нужен semaphore, у которого можно изменять лимит в runtime.
 
-<details>
-<summary>Решение</summary>
+**Решение:**
 
 ```go
 package main
@@ -526,7 +524,7 @@ func main() {
 }
 ```
 
-</details>
+---
 
 ## Best Practices
 

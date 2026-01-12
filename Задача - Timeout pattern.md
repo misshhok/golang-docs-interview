@@ -450,8 +450,7 @@ func main() {
 
 ## Вопрос 1: В чём разница между time.After и context.WithTimeout?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 | time.After | context.WithTimeout |
 |------------|---------------------|
@@ -488,14 +487,13 @@ case <-ctx.Done():
 - `time.After` → простые локальные таймауты (осторожно с утечками)
 - `context.WithTimeout` → production код, HTTP, DB, любые библиотеки
 
-</details>
+---
 
 ## Вопрос 2: Как отменить операцию при таймауте?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
-**Операция должна проверять context:**
+Операция должна проверять context:
 
 ```go
 func longOperation(ctx context.Context) error {
@@ -533,12 +531,11 @@ func badOperation(ctx context.Context) error {
 }
 ```
 
-</details>
+---
 
 ## Вопрос 3: Что произойдёт если не вызвать cancel()?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 ```go
 func leak() {
@@ -574,7 +571,7 @@ if earlyExit {
 // defer cancel() тоже вызовется - это безопасно
 ```
 
-</details>
+---
 
 ## Best Practices
 

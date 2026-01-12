@@ -442,8 +442,7 @@ func downloadFile(ctx context.Context, url string) (int64, error) {
 
 ### Вопрос 1: В чём разница между семафором и Worker Pool?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 **Семафор (канал):**
 - Создаёт N горутин (по количеству задач)
@@ -457,12 +456,11 @@ func downloadFile(ctx context.Context, url string) (int64, error) {
 - Эффективнее по памяти
 - Сложнее в реализации
 
-</details>
+---
 
 ### Вопрос 2: Когда использовать errgroup.SetLimit vs семафор?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 **errgroup.SetLimit:**
 - Нужна обработка ошибок (первая ошибка отменяет всё)
@@ -474,12 +472,11 @@ func downloadFile(ctx context.Context, url string) (int64, error) {
 - Не хотите внешних зависимостей
 - Нужно продолжать при ошибках отдельных задач
 
-</details>
+---
 
 ### Вопрос 3: Как выбрать оптимальное число воркеров?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 Зависит от типа задачи:
 
@@ -489,7 +486,7 @@ func downloadFile(ctx context.Context, url string) (int64, error) {
 
 Лучший способ — бенчмарки на реальной нагрузке.
 
-</details>
+---
 
 ## Связанные темы
 

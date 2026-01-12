@@ -311,8 +311,7 @@ func (wg *WaitGroup) Wait() {
 
 ### Вопрос 1: Почему sync.WaitGroup быстрее канальной реализации?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 sync.WaitGroup использует:
 - Атомарные операции (atomic.AddInt64)
@@ -324,12 +323,11 @@ sync.WaitGroup использует:
 - Копирование данных
 - Возможное переключение контекста горутины
 
-</details>
+---
 
 ### Вопрос 2: Можно ли реализовать Add с отрицательным delta?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 Да, sync.WaitGroup поддерживает `Add(-1)` как эквивалент `Done()`.
 
@@ -344,12 +342,11 @@ func (wg *WaitGroup) Add(delta int) {
 }
 ```
 
-</details>
+---
 
 ### Вопрос 3: Как сделать WaitGroup переиспользуемым?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 После Wait нужно сбросить состояние:
 
@@ -365,7 +362,7 @@ func (wg *WaitGroup) Done() {
 }
 ```
 
-</details>
+---
 
 ## Связанные темы
 

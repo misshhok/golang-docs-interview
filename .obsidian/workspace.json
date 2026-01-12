@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ec01e7c00de418c6",
+        "id": "975591c4827b4541",
         "type": "tabs",
         "children": [
           {
-            "id": "554e4c02e7429441",
+            "id": "17d244a3acdf3e7a",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "Go - Генерация кода (go generate).md",
-                "bFile": "Go - Генерация кода (go generate).md",
-                "aRef": ""
+                "file": "Задача - Pipeline pattern.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: Go - Генерация кода (go generate)  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "Задача - Pipeline pattern"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "firstRes",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -193,13 +193,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "554e4c02e7429441",
+  "active": "17d244a3acdf3e7a",
   "lastOpenFiles": [
-    "Roadmap - Junior Go Developer.md",
+    "Задача - First Response.md",
+    "Задача - Pipeline pattern.md",
+    "Задача - Rate Limiter.md",
+    "Задача - Parallel URL Fetcher.md",
+    "CAP теорема.md",
+    "Chi.md",
+    "Скользящее окно (Sliding Window).md",
+    "Связные списки.md",
+    "Переменные среды и .env.md",
+    "Логирование - Best practices.md",
+    "Бинарные деревья поиска.md",
+    "Алгоритмическая сложность (Big O).md",
+    "Алгоритмы на строках.md",
     "examples/openapi.yaml.md",
+    "Roadmap - Junior Go Developer.md",
     "examples/openapi.yaml",
     "examples",
-    "Chi.md",
     "INDEX.md",
     "Go - Массивы и слайсы.md",
     "Go - Переменные и константы.md",
@@ -210,18 +222,6 @@
     "E2E тестирование.md",
     "Go - Горутины (goroutines).md",
     "Go - Каналы (channels).md",
-    "Задача - Merge N Channels.md",
-    "Задача - Concurrent Map.md",
-    "Задача - Retry with Backoff.md",
-    "Задача - Bounded Parallelism.md",
-    "Задача - First Response.md",
-    "PostgreSQL - ACID.md",
-    "Задача - Web Crawler.md",
-    "Задача - Or-Done Channel.md",
-    "Задача - TTL Cache.md",
-    "Задача - Custom WaitGroup.md",
-    "Задача - Parallel URL Fetcher.md",
-    "Многопоточность vs Параллелизм vs Конкурентность.md",
-    "System Design - Основы.md"
+    "Задача - Merge N Channels.md"
   ]
 }

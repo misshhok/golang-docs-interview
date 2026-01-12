@@ -486,8 +486,7 @@ func main() {
 
 Задача: пул должен уметь увеличивать/уменьшать количество workers в runtime.
 
-<details>
-<summary>Решение</summary>
+**Решение:**
 
 ```go
 package main
@@ -586,12 +585,11 @@ func main() {
 }
 ```
 
-</details>
+---
 
 ## Вопрос 2: Чем отличается Worker Pool от Semaphore?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 | Worker Pool | Semaphore |
 |-------------|-----------|
@@ -629,7 +627,7 @@ for i := 0; i < 100; i++ {
 - Worker Pool → долгоживущие воркеры, управление очередью
 - Semaphore → простое ограничение параллелизма
 
-</details>
+---
 
 ## Вопрос 3: Проблема с этой реализацией?
 
@@ -656,8 +654,7 @@ func main() {
 }
 ```
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 **Deadlock!**
 
@@ -687,7 +684,7 @@ for a := 1; a <= 9; a++ {
 }
 ```
 
-</details>
+---
 
 ## Best Practices
 

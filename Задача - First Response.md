@@ -463,8 +463,7 @@ func HedgedRequest(ctx context.Context, url string, hedgeDelay time.Duration) (s
 
 ### Вопрос 1: Почему важно использовать буферизированный канал?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 Без буфера горутины, которые не успели первыми, заблокируются навсегда на отправке в канал. Это утечка горутин.
 
@@ -481,12 +480,11 @@ default: // Не блокируемся
 }
 ```
 
-</details>
+---
 
 ### Вопрос 2: Как убедиться что все горутины завершились?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 1. **Context с cancel** — при вызове cancel() все запросы с этим контекстом получат ошибку.
 
@@ -503,12 +501,11 @@ for _, url := range urls {
 wg.Wait()
 ```
 
-</details>
+---
 
 ### Вопрос 3: Как реализовать "первые N успешных"?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 ```go
 func FirstN(ctx context.Context, urls []string, n int) ([]string, error) {
@@ -540,7 +537,7 @@ func FirstN(ctx context.Context, urls []string, n int) ([]string, error) {
 }
 ```
 
-</details>
+---
 
 ## Связанные темы
 

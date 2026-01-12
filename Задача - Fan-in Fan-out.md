@@ -487,8 +487,7 @@ func main() {
 
 ## Вопрос 1: В чём разница между Fan-out и Worker Pool?
 
-<details>
-<summary>Ответ</summary>
+**Ответ:**
 
 | Fan-out | Worker Pool |
 |---------|-------------|
@@ -520,14 +519,13 @@ for i := 0; i < 3; i++ {
 - Fan-out/Fan-in → когда нужна промежуточная обработка результатов каждого worker'а
 - Worker Pool → когда результаты можно сразу объединить
 
-</details>
+---
 
 ## Вопрос 2: Реализуйте Fan-in с приоритетом
 
 Нужно читать из канала с высоким приоритетом чаще чем из обычных.
 
-<details>
-<summary>Решение</summary>
+**Решение:**
 
 ```go
 func fanInWithPriority(high <-chan int, normal ...<-chan int) <-chan int {
@@ -615,12 +613,11 @@ func fanInPriority(high, low <-chan int) <-chan int {
 }
 ```
 
-</details>
+---
 
 ## Вопрос 3: Как ограничить количество одновременных workers в Fan-out?
 
-<details>
-<summary>Решение</summary>
+**Решение:**
 
 **Проблема:** Fan-out может создать слишком много горутин.
 
@@ -655,7 +652,7 @@ func fanOutLimited(in <-chan int, maxWorkers int) []<-chan int {
 
 **Или используйте Worker Pool вместо Fan-out** - он уже имеет ограничение.
 
-</details>
+---
 
 ## Best Practices
 
